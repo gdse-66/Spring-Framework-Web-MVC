@@ -2,7 +2,8 @@ package lk.ijse.gdse66.spring;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+public class WebAppInitializer extends
+        AbstractAnnotationConfigDispatcherServletInitializer {
     public WebAppInitializer() {
         System.out.println("WebAppInitializer() - constructor");
     }

@@ -33,8 +33,6 @@ public class WebAppConfig implements WebMvcConfigurer {
         return resolver;
     }
 
-
-
     @Bean
     public MyController1 myController1(){
         return new MyController1();

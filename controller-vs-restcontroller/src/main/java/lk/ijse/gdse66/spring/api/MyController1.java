@@ -13,6 +13,7 @@ public class MyController1 {
 
     @GetMapping
     public String getMethod(){
+        System.out.println("MyController1");
         return "MyController1";
     }
 }
