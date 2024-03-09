@@ -35,4 +35,19 @@ public class ItemController {
         return "SaveItemUrlEncoded(): I accept only application/x-www-form-urlencoded";
     }
 
+    /* ------------------- produces --------------------- */
+    /* specify MIME type that a handler method can generate as the response (content type of response body).
+    * Depending on the Accept header sent in request header,
+    * spring route the request to the appropriate handler method*/
+
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public String GetItemAsJson(){
+        return "GetItemAsJson()";
+    }
+
+    @GetMapping(produces = MediaType.APPLICATION_XML_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public String GetItemASXml(){
+        return "GetItemsAsXml()";
+    }
+
 }
