@@ -1,5 +1,6 @@
 package lk.ijse.gdse66.spring.api;
 
+import lk.ijse.gdse66.spring.dto.CustomerDTO;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -47,6 +48,20 @@ public class CustomerController {
         return String.format(
                 "getMethodWithParam3(String id, String name, int age): %s, %s, %s"
                 ,cusId,name,age);
+    }
+
+    /* ---------- application/x-www-form-urlencoded OR query parameters ---------    */
+
+    /*@PostMapping
+    public String SaveCustomer(String id, String name, int age){
+        return String.format(
+                "SaveCustomer(String id, String name, int age): %s, %s, %s",
+                id,name,age);
+    }*/
+
+    @PostMapping
+    public String SaveCustomer(@ModelAttribute CustomerDTO customer){
+        return customer.toString();
     }
 
 
