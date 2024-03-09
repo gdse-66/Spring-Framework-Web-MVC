@@ -37,6 +37,10 @@ public class CustomerController {
         return String.format("getMethodWithParam1(String id): %s",id);
     }
 
+    @GetMapping(params = "age")
+    public String getMethodWithParam2(int age){
+        return String.format("getMethodWithParam2(int age): %s",age);
+    }
 
 
 }
