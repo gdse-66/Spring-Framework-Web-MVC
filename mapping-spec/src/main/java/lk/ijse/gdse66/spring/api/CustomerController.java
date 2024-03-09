@@ -33,8 +33,13 @@ public class CustomerController {
 
     /* ---------------- Query Parameters -----------------*/
 
-    @GetMapping
+    /*@GetMapping
     public String getMethodWithParam1(String id){
+        return String.format("getMethodWithParam1(String id): %s",id);
+    }*/
+
+    @GetMapping
+    public String getMethodWithParam1(@RequestParam(value = "CusId", required = false) String id){
         return String.format("getMethodWithParam1(String id): %s",id);
     }
 
