@@ -43,10 +43,10 @@ public class CustomerController {
     }
 
     @GetMapping(params = {"id", "name", "age"})
-    public String getMethodWithParam3(String id, String name, int age){
+    public String getMethodWithParam3(@RequestParam("id") String cusId, String name, int age){
         return String.format(
                 "getMethodWithParam3(String id, String name, int age): %s, %s, %s"
-                ,id,name,age);
+                ,cusId,name,age);
     }
 
 
