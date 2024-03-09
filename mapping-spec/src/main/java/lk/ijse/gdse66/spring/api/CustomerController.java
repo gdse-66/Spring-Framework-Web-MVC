@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/customers")
 public class CustomerController {
 
-    @GetMapping
+    /*@GetMapping
     public String getAllCustomers(){
         return "getAllCustomers()";
-    }
+    }*/
 
     /* --------------- path variables -----------------*/
 
@@ -29,6 +29,15 @@ public class CustomerController {
     public String getCustomerById(@PathVariable String id){
         return String.format("getCustomerById(String id): %s",id);
     }
+
+    /* ---------------- Query Parameters -----------------*/
+
+    @GetMapping
+    public String getMethodWithParam1(String id){
+        return String.format("getMethodWithParam1(String id): %s",id);
+    }
+
+
 
 }
 
