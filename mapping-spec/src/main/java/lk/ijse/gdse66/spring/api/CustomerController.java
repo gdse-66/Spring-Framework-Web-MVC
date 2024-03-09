@@ -1,0 +1,35 @@
+package lk.ijse.gdse66.spring.api;
+
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/customers")
+public class CustomerController {
+
+    @GetMapping
+    public String getAllCustomers(){
+        return "getAllCustomers()";
+    }
+
+    /* --------------- path variables -----------------*/
+
+    @GetMapping("/{city}")
+    public String getCustomerByCity(@PathVariable String city){
+        return String.format("getCustomerByCity(String city): %s",city);
+    }
+
+    @GetMapping("/{city}/{name}")
+    public String getCustomerByCityAndName
+            (@PathVariable String city, @PathVariable("name") String CusName){
+        return String.format(
+                "getCustomerByCity(String city, String name): %s, %s",city,CusName);
+    }
+
+}
+
+
+
+
+
+
+
