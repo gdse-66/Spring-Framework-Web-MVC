@@ -13,16 +13,21 @@ public class CustomerController {
 
     /* --------------- path variables -----------------*/
 
-    @GetMapping("/{city}")
+    /*@GetMapping("/{city}")
     public String getCustomerByCity(@PathVariable String city){
         return String.format("getCustomerByCity(String city): %s",city);
-    }
+    }*/
 
     @GetMapping("/{city}/{name}")
     public String getCustomerByCityAndName
             (@PathVariable String city, @PathVariable("name") String CusName){
         return String.format(
                 "getCustomerByCity(String city, String name): %s, %s",city,CusName);
+    }
+
+    @GetMapping("/{id:C\\d{3}}")
+    public String getCustomerById(@PathVariable String id){
+        return String.format("getCustomerById(String id): %s",id);
     }
 
 }
