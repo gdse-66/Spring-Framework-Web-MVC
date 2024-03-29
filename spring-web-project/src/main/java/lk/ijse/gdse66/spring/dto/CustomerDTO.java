@@ -20,4 +20,5 @@ public class CustomerDTO implements Serializable {
     private String name;
     @NotBlank(message = "address can not be null")
     private String address;
+    private String ProfilePic;
 }
