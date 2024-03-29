@@ -8,8 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Transformer {
 
-
-    ModelMapper mapper;
+    private final ModelMapper mapper;
 
     public Transformer(ModelMapper mapper) {
         this.mapper = mapper;

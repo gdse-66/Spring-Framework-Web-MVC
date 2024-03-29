@@ -22,10 +22,11 @@ public class CustomerController {
         return customerService.getAllCustomers();
     }
 
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public void saveCustomer(@RequestBody CustomerDTO customer){
-        customerService.saveCustomer(customer);
+    public CustomerDTO saveCustomer(@RequestBody CustomerDTO customer){
+        return customerService.saveCustomer(customer);
     }
 
     @DeleteMapping("/{id}")
@@ -38,6 +39,7 @@ public class CustomerController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updateCustomer(@PathVariable("id") String id,
                                @RequestBody CustomerDTO customer){
+        customer.setId(id);
         customerService.updateCustomer(customer);
     }
 
