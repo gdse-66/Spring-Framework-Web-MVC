@@ -62,4 +62,22 @@ class CustomerRepoTest {
         System.out.println(count);
     }
 
+    @Test
+    void getAllCustomers(){
+        addAllCustomers();
+//        List<Customer> customerList = customerRepo.getAllCustomersWithSQL();
+//        List<Customer> customerList = customerRepo.getAllCustomersWithJPQL();
+        List<Customer> customerList = customerRepo.getAllCustomersWithHQL();
+        customerList.forEach(customer -> System.out.println(customer));
+    }
+
+    @Test
+    void getAllCustomersWithNameAndAddress(){
+        addAllCustomers();
+//        List<Customer> customerList = customerRepo.getAllCustomersByNameAndAddress("Saman Kumara", "Matara");
+        List<Customer> customerList = customerRepo.getAllCustomersByNameAndAddress2("Saman Kumara", "Matara");
+        customerList.forEach(customer -> System.out.println(customer));
+
+    }
+
 }
