@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
 //@ExtendWith({SpringExtension.class}) // link Junit with Spring
 //@ContextConfiguration(classes = WebRootConfig.class) // create a spring context for testing and import configuration for it
 @SpringJUnitConfig(classes = WebRootConfig.class)
-@Transactional
+@Transactional // any changes made to db during test will not be committed after the execution of test
 class CustomerServiceImplTest {
 
     @Autowired
